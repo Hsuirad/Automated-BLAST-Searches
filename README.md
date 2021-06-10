@@ -1,4 +1,4 @@
-#Table of Contents
+# Table of Contents
 	* [Instructions](#Instructions)
 	* [Issues](#Issues)
 		* Common Issues
