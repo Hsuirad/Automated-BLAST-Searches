@@ -1,8 +1,8 @@
 # Table of Contents
 ===============================
 <!--ts-->
-	* [Instructions](#Instructions)
-	* [Issues](#Issues)
+	* [Instructions](#instructions)
+	* [Issues](#issues)
 		* Common Issues
 		* Fixes to those issues
 <!--te-->
