@@ -19,5 +19,4 @@
       4. Keep the column structure the same as the "example.xlsx" file
 
 # Issues:
-   1. 
-
+   1. Main issue is how xlsxwriter doesn't read the xlsx file properly, make sure to edit a randomly empty cell then make it empty again and press save then rerun

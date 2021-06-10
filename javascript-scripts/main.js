@@ -7,16 +7,12 @@ let argv = require('yargs/yargs')(process.argv.slice(2)).argv;
 var workbook = XLSX.readFile(argv.path, {
     type: "string"
 });
-/* DO SOMETHING WITH workbook HERE */
 
 var first_sheet_name = workbook.SheetNames[0];
-var address_of_cell = 'A1';
 
 /* Get worksheet */
 var worksheet = workbook.Sheets[first_sheet_name];
 
-/* Find desired cell */
-var desired_cell = worksheet[address_of_cell];
 
 let entryNames = []
 let hasGene = []
@@ -31,21 +27,27 @@ for(cell in worksheet){
     }
 }
 
-for(let i = 2; i < 56; i++){
-    let cell = "J" + i
-    console.log(worksheet["A1"].v)
-    console.log(worksheet[cell].f)
-    // console.log(worksheet[cell].l)
-    // console.log(cell)
-    let value = worksheet[cell].f.substring(worksheet[cell].f.indexOf("./"), worksheet[cell].f.indexOf('Link to FASTA') - 3)
-    console.log(value, worksheet[cell].f.substring(worksheet[cell].f.indexOf("./"), worksheet[cell].f.indexOf('Link to FASTA') - 3))
-    let part = worksheet[cell].f.substring(worksheet[cell].f.indexOf("./output-data/") + "./output-data/".length, worksheet[cell].f.indexOf('/","'))
-    let data = fs.readFileSync(value + part + ".fasta", {encoding:'utf8', flag:'r'});
-    console.log(data)
-    entryNames.push(data)
-    quickLookup[data] = "J" + cell.substring(1);
+for(let i = 2; i < cellMax; i++){
+    try{
+        let cell = "J" + i
+        console.log(worksheet["A1"].v)
+        console.log(worksheet[cell].f)
+        // console.log(worksheet[cell].l)
+        // console.log(cell)
+        let value = worksheet[cell].f.substring(worksheet[cell].f.indexOf("./"), worksheet[cell].f.indexOf('Link to FASTA') - 3)
+        console.log(value, worksheet[cell].f.substring(worksheet[cell].f.indexOf("./"), worksheet[cell].f.indexOf('Link to FASTA') - 3))
+        let part = worksheet[cell].f.substring(worksheet[cell].f.indexOf("./output-data/") + "./output-data/".length, worksheet[cell].f.indexOf('/","'))
+        let data = fs.readFileSync(value + part + ".fasta", {encoding:'utf8', flag:'r'});
+        console.log(data)
+        entryNames.push(data)
+        quickLookup[data] = "J" + cell.substring(1);
 
-    hasGene.push(worksheet["I"+i].v == "N/A" ? true : false);
+        hasGene.push(worksheet["I"+i].v == "N/A" ? true : false);
+    } catch {
+        entryNames.push('')
+        quickLookup['a'] = ''
+        hasGene.push(false)
+    }
 }
 
 // for(cell in worksheet){
