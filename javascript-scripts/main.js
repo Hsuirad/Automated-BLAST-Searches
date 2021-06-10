@@ -1,5 +1,4 @@
 const puppeteer = require('puppeteer');
-const readXlsxFile = require('read-excel-file/node');
 const fs = require('fs')
 const XLSX = require('xlsx');
 
@@ -25,46 +24,6 @@ let hasGene = []
 let quickLookup = {}
 
 let cellMax = 0
-
-
-
-
-
-
-/*
-
-
-
-
-
-
-
-
-
-
-
-
-
-YARGSSSSSSSSSSSSSSSSSSSSSsss
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-*/
-
-
-
-
 
 for(cell in worksheet){
     if(cell.substring(1) * 1 > cellMax){
