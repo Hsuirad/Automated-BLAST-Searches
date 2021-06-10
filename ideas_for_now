@@ -1,0 +1,12 @@
+- make into file folder hyperlinks
+- fasta hyperlink will be accession id
+- timeout for 6 minutes not 3
+- dont even need alternate name, but if there is a "GN=" in the first column that means thats the name
+- rerun if your output for fasta is like "<!doctype"
+- dont even need to show caret section of fasta, its just a comment header
+
+
+THINGS YOU HAVE TO DO:
+- hyperlink + folder thing
+- make description file to explain step by step
+- comment code and make it legible
