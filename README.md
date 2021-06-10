@@ -1,11 +1,9 @@
 # Table of Contents
-===============================
-<!--ts-->
-	* [Instructions](#instructions)
-	* [Issues](#issues)
-		* Common Issues
-		* Fixes to those issues
-<!--te-->
+   * [Instructions](#instructions)
+   * [Issues](#issues)
+      * [Test](#test)
+   * [Table of contents](#table-of-contents)
+   * 
 # Issues:
 test
 
